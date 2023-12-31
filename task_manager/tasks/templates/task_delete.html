@@ -1,0 +1,34 @@
+<!-- delete_task.html -->
+{% extends 'base.html' %}
+
+{% block title %}
+    Delete Task
+{% endblock %}
+
+{% block content %}
+    <h1>Delete Task</h1>
+    <p>Are you sure you want to delete the task "{{ task.title }}"?</p>
+    <form method="post">
+        {% csrf_token %}
+        <input type="submit" value="Delete Task">
+    </form>
+    <a href="{% url 'task-list' %}">Cancel</a>
+{% endblock %}
+
+
+
+{% comment %} <!DOCTYPE html>
+<html>
+<head>
+    <title>Delete Task</title>
+</head>
+<body>
+    <h1>Delete Task</h1>
+    <p>Are you sure you want to delete the task "{{ task.title }}"?</p>
+    <form method="post">
+        {% csrf_token %}
+        <input type="submit" value="Delete Task">
+    </form>
+    <a href="{% url 'task-list' %}">Cancel</a>
+</body>
+</html> {% endcomment %}
